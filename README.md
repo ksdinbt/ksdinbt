@@ -94,7 +94,7 @@ What the framework covers:
 ## Featured open work: `agent-communication-language`
 
 **[github.com/ksdinbt/agent-communication-language](https://github.com/ksdinbt/agent-communication-language)**
-· private during Phase 0, public on completion
+· public · Phase 0 complete
 
 A research programme on whether agents should talk to each other in natural language at all, and
 what a better representation would have to contain.
@@ -121,6 +121,15 @@ deliberately self-defeating hypothesis: that compact encodings may not save anyt
 
 The benchmark includes the incumbent as an arm from day one. Comparing a new representation only
 against natural language would manufacture a favourable result.
+
+Phase 0 closed by doing rather than asserting: I installed and ran the incumbent's reference
+implementation. It installs in a minute and compiles all of its example set, but its "lossless"
+round trip preserves the full representation in 0 of 54 cases, because secondary entity identifiers,
+constraint subjects and the entire metadata block are dropped on decode. That result is written up in
+the repository, and it changed the benchmark design: every arm is now scored on one declared semantic
+projection, and the extension cannot live in the metadata field where the incumbent keeps its only
+confidence value. Two upstream bugs were found and recorded. This is the part of the work I care
+about most: the gate was cheap, it was binary, and it changed the plan.
 
 ---
 
